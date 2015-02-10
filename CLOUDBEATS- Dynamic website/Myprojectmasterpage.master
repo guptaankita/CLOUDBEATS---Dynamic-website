@@ -1,0 +1,71 @@
+﻿<%@ Master Language="C#" %>
+
+<!DOCTYPE html>
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+        <!--This is the master page of my project,it helps to provide a uniform styling for all
+        my pages, without having to specify the same style on every page,I just add a link to my Master Page
+        on every page of the project-->
+
+<head id="Head1" runat="server">
+    <meta charset="utf-8" />
+
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0"/>
+    
+     <title>CLOUDBEATS</title>
+    <!--This is main css for this projecy-->
+    <link rel="stylesheet" type="text/css" href="../css/newdemoprojectcss.css" />
+    <link rel="icon" type="image/jpg" href="../images/iconimages.jpg" />
+   
+        <asp:ContentPlaceHolder ID="ContentPlaceHolderHead" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+    
+         <div class="heading">
+            
+                     
+          <h1>CLOUDBEATS</h1>
+             </div>
+
+            <div class="menubar">
+                <nav><ul>
+               <li><a href="<%= Page.ResolveUrl("~/Project/myhome.aspx")%>"><b>HOME</b></a></li>
+                <li><a href="<%= Page.ResolveUrl("~/Project/songsearchpage.aspx")%> " target="_blank"><b>SEARCH TRACK</b></a></li>
+                <li><a href="<%= Page.ResolveUrl("~/Project/artistsearchpage.aspx")%>" target="_blank"><b>SEARCH ARTIST</b></a></li>
+                <li><a href="<%= Page.ResolveUrl("~/Project/toptracks.aspx")%>" target="_blank"><b>TRACKS BY GENRE</b></a></li>
+                <li><a href="<%= Page.ResolveUrl("~/Project/getevents.aspx")%>" target="_blank"><b>MUSIC EVENTS</b></a></li>
+                <li><a href="<%= Page.ResolveUrl("~/Project/charttracks.aspx")%>" target="_blank"><b>POPULAR TRACKS</b></a></li>
+                <li><a href="<%= Page.ResolveUrl("~/story/index.htm?../Documentation/")%>" target="_blank"><b>DOCUMENTATION</b></a></li>
+
+
+                    </ul></nav>
+                
+
+
+
+                
+               
+            </div>
+                <div class="container">
+
+             <asp:ContentPlaceHolder ID="ContentPlaceHolderBody" runat="server">
+            </asp:ContentPlaceHolder>
+
+
+            <div class="clear"></div>
+            <br />
+            <br />
+        </div>
+          <div class="footer_div"><footer>Data courtesy: last.fm, Lyrics n Music, Apple iTunes and EchoNest <br /> &copy; <%=DateTime.Now.Year%> Ankita Gupta. All rights reserved.</footer></div>
+
+                   
+   
+    </form>
+</body>
+</html>
